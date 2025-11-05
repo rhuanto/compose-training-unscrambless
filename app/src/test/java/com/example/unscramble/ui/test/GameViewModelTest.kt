@@ -29,6 +29,7 @@ import org.junit.Test
 class GameViewModelTest {
     private val viewModel = GameViewModel()
 
+    //Inicialización del ViewModel.
     @Test
     fun gameViewModel_Initialization_FirstWordLoaded() {
         /**
@@ -68,6 +69,7 @@ class GameViewModelTest {
         assertTrue(currentGameUiState.isGuessedWordWrong)
     }
 
+    //Intento correcto del usuario.
     @Test
     fun gameViewModel_CorrectWordGuessed_ScoreUpdatedAndErrorFlagUnset() {
         var currentGameUiState = viewModel.uiState.value
@@ -100,7 +102,7 @@ class GameViewModelTest {
         // Assert that word count is increased by 1 after word is skipped.
         assertEquals(lastWordCount + 1, currentGameUiState.currentWordCount)
     }
-
+//Adivinar correctamente MAX_NO_OF_WORDS (10) veces.
     @Test
     fun gameViewModel_AllWordsGuessed_UiStateUpdatedCorrectly() {
         var expectedScore = 0
